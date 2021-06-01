@@ -35,7 +35,8 @@ public class TestUtil extends TestBase {
 		FileInputStream file = null;
 		try {
 			String cwd = System.getProperty("user.dir");
-			System.out.println(cwd);
+
+			System.out.println("Current WD:" + cwd);
 			file = new FileInputStream(cwd + "/" + TESTDATA_SHEET_PATH);
 			
 		} catch (FileNotFoundException e) {
