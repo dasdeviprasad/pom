@@ -21,8 +21,7 @@ public class TestUtil extends TestBase {
 	public static long PAGE_LOAD_TIMEOUT = 20;
 	public static long IMPLICIT_WAIT = 20;
 
-	public static String TESTDATA_SHEET_PATH = "/Users/naveenkhunteta/Documents/workspace"
-			+ "/FreeCRMTest/src/main/java/com/crm/qa/testdata/FreeCrmTestData.xlsx";
+	public static String TESTDATA_SHEET_PATH = "src/main/java/com/crm/qa/testdata/FreeCrmTestData.xlsx";
 
 	static Workbook book;
 	static Sheet sheet;
@@ -35,7 +34,10 @@ public class TestUtil extends TestBase {
 	public static Object[][] getTestData(String sheetName) {
 		FileInputStream file = null;
 		try {
-			file = new FileInputStream(TESTDATA_SHEET_PATH);
+			String cwd = System.getProperty("user.dir");
+			System.out.println(cwd);
+			file = new FileInputStream(cwd + "/" + TESTDATA_SHEET_PATH);
+			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
